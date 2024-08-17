@@ -1,0 +1,24 @@
+from flask import Blueprint, request, jsonify
+from controllers import SurveyController
+
+views = Blueprint('views', __name__)
+
+@views.record_once
+def on_load(state):
+    app = state.app
+    SurveyController.initialize(app)
+
+@views.route('/create-survey', methods=['POST'])
+def create_survey():
+    data = request.json
+    return SurveyController.create_survey(data)
+
+@views.route('/surveys', methods=['GET'])
+def get_all_surveys():
+    return SurveyController.get_all_surveys()
+
+@views.route('/unsent-emails', methods=['GET'])
+def get_unsent_emails():
+    return SurveyController.get_unsent_emails()
+
+

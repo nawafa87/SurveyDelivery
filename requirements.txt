@@ -1,0 +1,7 @@
+Flask==2.3.2
+Redis==4.5.4
+rq==1.16.2
+Flask-SQLAlchemy==3.0.5
+python-dotenv==0.19.0
+psycopg2-binary==2.9.6
+Flask-Mail==0.9.1
