@@ -43,7 +43,7 @@ survey-delivery-system/
 1. Clone the repository:
    ```
    git clone <repository-url>
-   cd survey-delivery-system
+   cd sSurveyDelivery
    ```
 
 2. Build and run the Docker containers:

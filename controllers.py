@@ -5,6 +5,7 @@ from redis import Redis
 from tasks import process_survey
 
 """
+Business logic for survey operations
 This the Controller and all controllers are define here.
  methods:
  - create_survey

@@ -8,8 +8,9 @@ from tools import render_email_template
 logger = logging.getLogger(__name__)
 
 """
+Background tasks for email processing
 Tasks.py is responsible for
-Process survey and sending email to Admins.
+Background tasks, Process survey and sending email to Admins.
 """
 
 def send_email(to, subject, html_content):

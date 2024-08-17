@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify
 from controllers import SurveyController
 
 """
+API route definitions
 Views.py have the route for this app:
 - /create-survey(POST)
 - /surveys(GET)

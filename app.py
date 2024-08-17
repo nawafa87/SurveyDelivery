@@ -5,6 +5,7 @@ from flask_mail import Mail
 from views import views
 
 """
+Main application entry point
 This file is the root of the application.
 It is responsible for initializing the Flask app, configuring the database and mail services.
 """

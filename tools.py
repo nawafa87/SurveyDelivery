@@ -3,6 +3,7 @@ import base64
 from flask import current_app, render_template
 
 """
+Utility functions for email rendering
 Tools.py have the function that support the tasks.py to send an email.
 """
 

@@ -1,6 +1,8 @@
 import datetime
 from flask_sqlalchemy import SQLAlchemy
-
+"""
+Database models
+"""
 db = SQLAlchemy()
 
 class Survey(db.Model):

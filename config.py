@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv
 
 """
+Configuration settings
 This the Configuration file and it's responsible for loading environment variables.
 """
 
