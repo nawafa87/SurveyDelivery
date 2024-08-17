@@ -1,6 +1,13 @@
 from flask import Blueprint, request, jsonify
 from controllers import SurveyController
 
+"""
+Views.py have the route for this app:
+- /create-survey(POST)
+- /surveys(GET)
+- /unsent-emails(GET)
+"""
+
 views = Blueprint('views', __name__)
 
 @views.record_once

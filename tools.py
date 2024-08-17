@@ -2,6 +2,10 @@ import os
 import base64
 from flask import current_app, render_template
 
+"""
+Tools.py have the function that support the tasks.py to send an email.
+"""
+
 def get_image_file_as_base64_data(filename):
     filepath = os.path.join(current_app.root_path, 'static', filename)
     with open(filepath, 'rb') as image_file:
@@ -12,7 +16,7 @@ def render_email_template(survey_url, domain_name):
         # Encode the logo image
         logo_data = get_image_file_as_base64_data('logo.png')
         
-        # Use HTML tags for line breaks
+        
         content = f"""
         <p>Dear Administrator of {domain_name},</p>
         <p>You are invited to complete the survey for your domain.</p>

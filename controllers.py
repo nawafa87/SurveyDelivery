@@ -4,6 +4,14 @@ from rq import Queue
 from redis import Redis
 from tasks import process_survey
 
+"""
+This the Controller and all controllers are define here.
+ methods:
+ - create_survey
+ - get_all_surveys
+ - get_unsent_emails
+"""
+
 class SurveyController:
     queue = None
 
@@ -12,6 +20,7 @@ class SurveyController:
         redis_conn = Redis.from_url(app.config['REDIS_URL'])
         cls.queue = Queue(connection=redis_conn)
 
+    #Create a new Survey
     @classmethod
     def create_survey(cls, data):
         survey_url = data.get('survey_url')
@@ -38,6 +47,7 @@ class SurveyController:
 
         return jsonify({"message": "Request Received and Survey Email will be sent", "survey": survey.id}), 202
 
+    #Get all records for a survey
     @staticmethod
     def get_all_surveys():
         surveys = Survey.query.all()
@@ -64,6 +74,7 @@ class SurveyController:
 
     @staticmethod
     def get_unsent_emails():
+        #Get all records that have email_sent False
         unsent_domains = Domain.query.filter_by(email_sent=False).all()
         unsent_list = []
         

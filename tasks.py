@@ -7,6 +7,11 @@ from tools import render_email_template
 
 logger = logging.getLogger(__name__)
 
+"""
+Tasks.py is responsible for
+Process survey and sending email to Admins.
+"""
+
 def send_email(to, subject, html_content):
     try:
         mail = Mail(current_app)
