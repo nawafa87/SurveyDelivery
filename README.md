@@ -43,7 +43,7 @@ survey-delivery-system/
 1. Clone the repository:
    ```
    git clone <repository-url>
-   cd sSurveyDelivery
+   cd SurveyDelivery
    ```
 
 2. Build and run the Docker containers:
@@ -74,18 +74,17 @@ Key configuration options:
 1. Create a new survey:
    ```
    POST /create-survey
-   Content-Type: application/json
-
-   {
-     "survey_url": "https://example.com/survey",
-     "domains": [
-       {
-         "domain_name": "example.com",
-         "admin_email": "admin@example.com"
-       },
-       ...
-     ]
-   }
+   curl -X POST http://localhost:5001/create-survey \
+     -H "Content-Type: application/json" \
+     -d '{
+           "survey_url": "https://health.com/survey",
+           "domains": [
+             {
+               "domain_name": "health.com",
+               "admin_email": "admin@health.com"
+             }
+           ]
+         }'
    ```
 
 2. Get all surveys:
